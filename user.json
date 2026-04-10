@@ -1,0 +1,40 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "name": "alex",
+            "passwort": "1",
+            "api_key": "49faad25-559a-4773-b723-9cdafdd6f78e"
+        },
+        {
+            "id": 2,
+            "name": "nocheinbenutzer",
+            "passwort": "1besserespasswort",
+            "api_key": "18940bea-1925-4c41-962a-bca98acccf69"
+        },
+        {
+            "id": 3,
+            "name": "kartoffelschäler",
+            "passwort": "pantoffel007",
+            "api_key": "c2766960-6b89-4274-84bc-5c7103c17ace"
+        },
+        {
+            "id": 4,
+            "name": "katze",
+            "passwort": "diesdasananas",
+            "api_key": "73d74bbc-d32d-45bd-a695-60d633073f66"
+        },
+        {
+            "id": 5,
+            "name": "tomate",
+            "passwort": "suppe1234",
+            "api_key": "70f5e45b-c77f-48ea-b58b-15538e439e4d"
+        },
+        {
+            "id": 6,
+            "name": "puma",
+            "passwort": "300",
+            "api_key": "23638bdd-b49f-4875-9187-48cf9c5cf364"
+        }
+    ]
+}

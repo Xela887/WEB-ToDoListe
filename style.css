@@ -2,9 +2,63 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+#bar {
+    display: flex;
+    width: 100%;
+    color: #ffffff;
+    background-color: #1c21ad;
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072)
+}
+
+#barText {
+    font-size: 40px;
+    height: fit-content;
+    width: fit-content;
+    padding-left: 2%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#loginUserButton {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5px;
+    border-radius: 7px;
+    transition: background-image 0.5s ease-out;
+    cursor: pointer;
+}
+#loginUserButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+#showRegisterWindowButton {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 7px;
+    transition: background-image 0.5s ease-out;
+    cursor: pointer;
+}
+#showRegisterWindowButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
 #loginWindow {
     display: block;
     background-color: rgb(187, 187, 187);
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072);
     text-align: center;
     width: 15%;
     height: fit-content;
@@ -13,15 +67,54 @@ body {
     border-style: solid;
     border-width: 2px;
     border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
     position: absolute;
     top: 30%;
     left: 42.5%;
 }
 
+#registerUserButton {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5px;
+    border-radius: 7px;
+    transition: background-image 0.5s ease-out;
+    cursor: pointer;
+}
+#registerUserButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+#showLoginWindowButton {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 7px;
+    transition: background-image 0.5s ease-out;
+    cursor: pointer;
+}
+#showLoginWindowButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
 #registerWindow {
     display: none;
     background-color: rgb(187, 187, 187);
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072);
     text-align: center;
     width: 15%;
     height: fit-content;
@@ -30,10 +123,31 @@ body {
     border-style: solid;
     border-width: 2px;
     border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
     position: absolute;
     top: 30%;
     left: 42.5%;
+}
+
+#createButton {
+    display: none;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    height: 80%;
+    padding: 10px;
+    border-radius: 7px;
+    margin-left: 55%;
+    margin-top: 35px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+#createButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
 }
 
 input {
@@ -80,19 +194,82 @@ button {
 }
 
 #new_list {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+        'header header header'
+        'backButton listTitle createButton';
     width: fit-content;
     padding: 5px;
     margin: 2px;
     background: rgb(187, 187, 187);
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072);
     border-style: solid;
     border-radius: 8px;
     border-color: black;
     border-width: 2px;
-    width: 20%;
     position: absolute;
     top: 30%;
     left: 40%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ffffff;
+}
+
+#newListHeader {
+    margin-left: 25%;
+    font-size: 25px;
+    grid-area: header;
+}
+
+#backToDashboardButton {
+    display: flex;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    height: 80%;
+    width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10%;
+    margin-top: 5px;
+    border-radius: 7px;
+    transition: background-image 0.5s ease-out;
+    cursor: pointer;
+    grid-area: backButton;
+}
+#backToDashboardButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+#createListButton {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    height: 80%;
+    width: fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10%;
+    margin-top: 5px;
+    border-radius: 7px;
+    transition: background-image 0.5s ease-out;
+    cursor: pointer;
+    grid-area: createButton;
+}
+
+#createListButton:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+#new_list_titel {
+    width: 100%;
+    grid-area: listTitle;
 }
 
 #create_new_task {

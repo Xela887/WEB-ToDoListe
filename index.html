@@ -6,24 +6,42 @@
         <script src="script.js"></script>
     </head>
     <body>
+
+        <div id="bar">
+            <p id="barText">
+                To-Do Liste
+            </p>
+            <div id="createButton" onclick="create_new_list()">
+                Neue Liste erstellen
+            </div>
+        </div>
+
         <div id="loginWindow">
             <h2>Anmeldung</h3>
             <input type="text" placeholder="Nutzername" id="loginusername"><br>
             <input type="password" placeholder="Passwort" id="loginpassword"><br>
-            <button onclick="loginUser()">Anmelden</button><br>
+            <div id="loginUserButton" onclick="loginUser()">
+                Anmelden
+            </div>
             <p class="messagebox"></p><br>
             <label>Kein Konto?</label><br>
-            <button onclick="showregisterWindow()">Registrieren</button>
+            <div id="showRegisterWindowButton" onclick="showregisterWindow()">
+                Registrieren
+            </div>
         </div>
 
         <div id="registerWindow">
             <h2>Registrierung</h2>
             <input type="text" placeholder="Nutzername" id="registerusername"><br>
             <input type="password" placeholder="Passwort" id="registerpassword"><br>
-            <button onclick="registerUser()">Registrieren</button><br>
+            <div id="registerUserButton" onclick="registerUser()">
+                Registrieren
+            </div>
             <p class="messagebox"></p><br>
             <label>Bereits ein Konto?</label><br>
-            <button onclick="showloginWindow()">Anmelden</button>
+            <div id="showLoginWindowButton" onclick="showloginWindow()">
+                Anmelden
+            </div>
         </div>
 
         <div id="todo-container"></div>
@@ -43,10 +61,14 @@
         </div>
 
         <div id="new_list" style="display: none">
-            <h2>Neue Liste erstellen</h2>
-            <button onclick="backToDashboard()">Zurück</button>
+            <p id="newListHeader">Neue Liste erstellen</p>
+            <div id="backToDashboardButton" onclick="backToDashboard()">
+                Zurück
+            </div>
             <input type="text" placeholder="Titel" id="new_list_title">
-            <button onclick="createList()">Erstellen</button>
+            <div id="createListButton" onclick="createList()">
+                Erstellen
+            </div>
         </div>
         
     </body>

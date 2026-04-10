@@ -121,16 +121,20 @@ async function getTodos() {
 }
 
 async function show_dashboard() {
+    document.getElementById("createButton").style.display = "block"
     const container = document.getElementById("todo-container");
     container.innerHTML = "";
-
+    
+    /*
     const new_list_button = document.createElement("button");
     new_list_button.id = "new_list_btn"
     new_list_button.textContent = "Neue Liste erstellen"
     new_list_button.addEventListener("click", () => {
         create_new_list()
     })
+    
     container.appendChild(new_list_button)
+    */
 
     const todos = await getTodos();
 
@@ -214,7 +218,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function create_new_list() {
     document.getElementById("todo-container").style.display = "none";
-    document.getElementById("new_list").style.display = "block";
+    document.getElementById("createButton").style.display = "none"
+    document.getElementById("new_list").style.display = "grid";
 }
 
 async function createList() {
@@ -248,6 +253,7 @@ async function createList() {
 function backToDashboard() {
     document.getElementById("new_list").style.display = "none"
     document.getElementById("todo-container").style.display = "block"
+    document.getElementById("createButton").style.display = "block"
 }
 
 async function deleteList(todoid) {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB ToDoListe</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="loginWindow">
+            <h2>Anmeldung</h3>
+            <input type="text" placeholder="Nutzername" id="loginusername"><br>
+            <input type="password" placeholder="Passwort" id="loginpassword"><br>
+            <button onclick="loginUser()">Anmelden</button><br>
+            <p class="messagebox"></p><br>
+            <label>Kein Konto?</label><br>
+            <button onclick="showregisterWindow()">Registrieren</button>
+        </div>
+
+        <div id="registerWindow">
+            <h2>Registrierung</h2>
+            <input type="text" placeholder="Nutzername" id="registerusername"><br>
+            <input type="password" placeholder="Passwort" id="registerpassword"><br>
+            <button onclick="registerUser()">Registrieren</button><br>
+            <p class="messagebox"></p><br>
+            <label>Bereits ein Konto?</label><br>
+            <button onclick="showloginWindow()">Anmelden</button>
+        </div>
+
+        <div id="todo-container"></div>
+
+        <div id="todo-detail" style="display:none;">
+            <button id="back-btn">Zurück</button>
+            <h2 id="detail-title"></h2>
+
+        <div id="create_new_task">
+            <input type="text" id="new_task_text" placeholder="Aufgabe">
+            <input type="text" id="new_task_category" placeholder="Kategorie">
+            <input type="datetime-local" id="new_task_deadline">
+            <button onclick="addTask()">Hinzufügen</button>
+        </div>
+
+            <ul id="detail-list"></ul>
+        </div>
+
+        <div id="new_list" style="display: none">
+            <h2>Neue Liste erstellen</h2>
+            <button onclick="backToDashboard()">Zurück</button>
+            <input type="text" placeholder="Titel" id="new_list_title">
+            <button onclick="createList()">Erstellen</button>
+        </div>
+        
+    </body>
+</html>

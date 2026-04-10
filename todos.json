@@ -1,0 +1,51 @@
+{
+    "todos": [
+        {
+            "userid": 1,
+            "todoid": 1,
+            "title": "Liste",
+            "todolist": [
+                {
+                    "id": 1,
+                    "text": "Einkaufen",
+                    "category": "Privat",
+                    "deadline": "2026-04-15T17:00",
+                    "done": false
+                }
+            ]
+        },
+        {
+            "userid": 1,
+            "todoid": 2,
+            "title": "neuer titel",
+            "todolist": []
+        },
+        {
+            "userid": 1,
+            "todoid": 3,
+            "title": "neueste liste",
+            "todolist": []
+        },
+        {
+            "userid": 6,
+            "todoid": 2,
+            "title": "Test",
+            "todolist": [
+                {
+                    "id": 2,
+                    "text": "test2",
+                    "category": "test",
+                    "deadline": "2026-04-10T09:30",
+                    "done": false
+                },
+                {
+                    "id": 3,
+                    "text": "ghgh",
+                    "category": "jggh",
+                    "deadline": "",
+                    "done": false
+                }
+            ]
+        }
+    ]
+}

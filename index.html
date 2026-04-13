@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WEB ToDoListe</title>
+        <title>WEB-ToDoListe</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
@@ -13,6 +13,9 @@
             </p>
             <div id="createButton" onclick="create_new_list()">
                 Neue Liste erstellen
+            </div>
+            <div id="profile">
+                <div id="profilepic" onclick="show_user()"></div>
             </div>
         </div>
 
@@ -48,13 +51,13 @@
 
         <div id="todo-detail" style="display:none;">
             <button id="back-btn">Zurück</button>
-            <h2 id="detail-title"></h2>
+            <p id="detail-title"></p>
 
         <div id="create_new_task">
             <input type="text" id="new_task_text" placeholder="Aufgabe">
             <input type="text" id="new_task_category" placeholder="Kategorie">
             <input type="datetime-local" id="new_task_deadline">
-            <button onclick="addTask()">Hinzufügen</button>
+            <button id="addTask-btn"onclick="addTask()">Hinzufügen</button>
         </div>
 
             <ul id="detail-list"></ul>
@@ -69,6 +72,26 @@
             <div id="createListButton" onclick="createList()">
                 Erstellen
             </div>
+        </div>
+
+        <div id="userinfo">
+            <button id="backToDashboardButton2" onclick="backToDashboard()">
+                Zurück
+            </button><br>
+            <p id="userinfo_username">Nutzername: </p><br>
+            <button class="btn-black" onclick="changePassword()">
+                Passwort ändern
+            </button>
+            <input type="text" id="new_password" placeholder="Neues Passwort" style="font-size: 15pt;">
+            <div style="height: 40px;">
+                <p class="messagebox2" style="text-align: left;"></p><br>
+            </div>
+            <button class="btn-black" onclick="logoutUser()">
+                Abmelden
+            </button><br>
+            <button class="btn-black" onclick="deleteUser()">
+                Konto löschen
+            </button>
         </div>
         
     </body>

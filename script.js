@@ -122,19 +122,9 @@ async function getTodos() {
 
 async function show_dashboard() {
     document.getElementById("createButton").style.display = "block"
+    document.getElementById("profilepic").style.display = "block";
     const container = document.getElementById("todo-container");
     container.innerHTML = "";
-    
-    /*
-    const new_list_button = document.createElement("button");
-    new_list_button.id = "new_list_btn"
-    new_list_button.textContent = "Neue Liste erstellen"
-    new_list_button.addEventListener("click", () => {
-        create_new_list()
-    })
-    
-    container.appendChild(new_list_button)
-    */
 
     const todos = await getTodos();
 
@@ -173,6 +163,7 @@ function showTodoDetail(list) {
 
     document.getElementById("todo-container").style.display = "none";
     document.getElementById("todo-detail").style.display = "block";
+    document.getElementById("createButton").style.display = "none";
 
     document.getElementById("detail-title").textContent = list.title;
 
@@ -191,7 +182,7 @@ function showTodoDetail(list) {
         });
 
         const text = document.createElement("span");
-        text.textContent = `${item.text} | ${item.category} | ${item.deadline}`;
+        text.textContent = `   ${item.text} | ${item.category} | ${item.deadline}`;
 
         const del = document.createElement("button");
         del.textContent = "❌";
@@ -212,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("back-btn").addEventListener("click", () => {
         document.getElementById("todo-detail").style.display = "none";
         document.getElementById("todo-container").style.display = "block";
+        document.getElementById("createButton").style.display = "block";
         clearTaskInputs();
     });
 });
@@ -254,6 +246,7 @@ function backToDashboard() {
     document.getElementById("new_list").style.display = "none"
     document.getElementById("todo-container").style.display = "block"
     document.getElementById("createButton").style.display = "block"
+    document.getElementById("userinfo").style.display = "none";
 }
 
 async function deleteList(todoid) {
@@ -333,3 +326,91 @@ async function openTodo(todoid) {
     showTodoDetail(list);
 }
 
+function show_user() {
+    document.getElementById("new_list").style.display = "none";
+    document.getElementById("todo-container").style.display = "none";
+    document.getElementById("createButton").style.display = "none";
+    document.getElementById("todo-detail").style.display = "none";
+    document.getElementById("userinfo").style.display = "block";
+
+    fetch("http://127.0.0.1:5000/user/" + userid, {
+        method: "GET",
+        headers: { "X-API-Key": apiKey }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("userinfo_username").textContent = "Nutzername: " + data.name;
+    })
+    .catch(error => console.error("Fehler:", error));
+}
+
+function showMessage2(message) {
+    const boxes = document.getElementsByClassName("messagebox2");
+    for (let box of boxes) {
+            box.textContent = message;
+            box.style.display = "block";
+    }
+    setTimeout(() => {
+        for (let box of boxes) {
+            box.textContent = "";
+            box.style.display = "none";
+        }
+    }, 2000);
+    return
+}
+
+function changePassword() {
+    const newPassword = document.getElementById("new_password").value;
+
+    if (!newPassword) {
+        showMessage2("Bitte neues Passwort eingeben");
+        return;
+    }
+    
+    fetch("http://127.0.0.1:5000/user/" + userid, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "X-API-Key": apiKey
+            },
+            body: JSON.stringify({ password: newPassword })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        document.getElementById("new_password").value = "";
+        showMessage2(data.message);
+    })
+    .catch(error => console.error("Fetch error:", error));
+}
+
+function logoutUser() {
+    apiKey = null;
+    userid = null;
+    currentTodoId = null;
+    document.getElementById("createButton").style.display = "none";
+    document.getElementById("profilepic").style.display = "none";
+    document.getElementById("todo-container").style.display = "none";
+    document.getElementById("todo-detail").style.display = "none";
+    document.getElementById("userinfo").style.display = "none";
+
+    document.getElementById("loginusername").value = "";
+    document.getElementById("loginpassword").value = "";
+    document.getElementById("registerusername").value = "";
+    document.getElementById("registerpassword").value = "";
+
+    showloginWindow();
+}
+
+function deleteUser() {
+    fetch("http://127.0.0.1:5000/user/" + userid, {
+        method: "DELETE",
+        headers: { "X-API-Key": apiKey }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        logoutUser();
+    })
+    .catch(error => console.error("Fehler:", error));
+}

@@ -7,7 +7,7 @@ body {
     width: 100%;
     color: #ffffff;
     background-color: #1c21ad;
-    background-image: linear-gradient(to bottom, #1c21ad, #0d1072)
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072);
 }
 
 #barText {
@@ -16,6 +16,24 @@ body {
     width: fit-content;
     padding-left: 2%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#profile {
+    align-content: center;
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+#profilepic {
+    width: 75px;
+    height: 75px;
+    display: none;
+    background-image: url("profilepic.jpg");
+    background-size: cover;
+}
+
+#profilepic:hover {
+    background-image: url("profilepic_hover.jpg");
 }
 
 #loginUserButton {
@@ -169,7 +187,9 @@ button {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background: rgb(187, 187, 187);
+    background-color: #1c21ad;
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072);
+    color: white;
     border-radius: 8px;
     font-size: 18px;
     text-align: left;
@@ -239,6 +259,7 @@ button {
     cursor: pointer;
     grid-area: backButton;
 }
+
 #backToDashboardButton:hover {
     background-image: linear-gradient(to top, #3dce1d, #4de72a);
     background-color: #3fca20;
@@ -267,18 +288,153 @@ button {
     background-color: #3fca20;
 }
 
+#back-btn {
+    font-size: 16pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#back-btn:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
 #new_list_titel {
     width: 100%;
     grid-area: listTitle;
 }
 
 #create_new_task {
-    background: rgb(187, 187, 187);
+    color: #ffffff;
+    background-color: #1c21ad;
+    background-image: linear-gradient(to bottom, #1c21ad, #0d1072);
+    width: fit-content;
     border-radius: 8px;
     padding: 5px;
+}
+
+#addTask-btn {
+    font-size: 12pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#addTask-btn:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+#detail-title {
+    font-size: 22pt;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .wrapper {
     display: flex;
     align-items: center;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+li {
+    margin: 3px;
+    padding-left: 7px;
+    color: #ffffff;
+    background-color: #4b59d2;
+    background-image: linear-gradient(to bottom, #4b59d2, #3a3fa0);
+    width: fit-content;
+    border-radius: 8px;
+}
+
+#userinfo {
+    display: none;
+}
+
+#userinfo_username {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 7px;
+    color: #ffffff;
+    background-color: #4b59d2;
+    background-image: linear-gradient(to bottom, #4b59d2, #3a3fa0);
+    width: fit-content;
+    border-radius: 8px;
+    margin: 3px;
+    padding: 7px;
+}
+
+
+
+#backToDashboardButton2 {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#backToDashboardButton2:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+.btn-white {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-white:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+.btn-black {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #36ab1b;
+    background-image: linear-gradient(to top, #36ab1b, #3dce1d);
+    color: #000000;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-black:hover {
+    background-image: linear-gradient(to top, #3dce1d, #4de72a);
+    background-color: #3fca20;
+}
+
+.messagebox2 {
+    text-align: left;
+    color: #ffffff;
+    display: none;
+    background-color: #4b59d2;
+    background-image: linear-gradient(to bottom, #4b59d2, #3a3fa0);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 7px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 7px;
+    height: 20px;
 }

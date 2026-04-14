@@ -156,6 +156,7 @@ async function show_dashboard() {
             container.appendChild(wrapper);
         });
     }
+    document.getElementById("todo-container").style.display = "block";
 }
 
 function showTodoDetail(list) {
